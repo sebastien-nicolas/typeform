@@ -9,7 +9,7 @@ class FormResponse(object):
     def __init__(self, token=None, completed=None, answers=None, hidden=None, metadata=None, questions=None):
         """Constructor for TypeForm form response object"""
         self._token = token
-        self._completed = bool(completed)
+        self._completed = False if completed == '0' else True
         self._hidden = hidden
         self._metadata = metadata
         self._questions = questions
